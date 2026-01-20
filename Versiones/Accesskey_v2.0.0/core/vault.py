@@ -10,7 +10,8 @@ class Vault:
         self._items[credential.name] = credential
 
     def list_names(self):
-        return sorted(self._items.keys())
+        return sorted(self._items.keys(), key=lambda s: s.lower())
+        #return sorted(self._items.keys())
 
     def get(self, name):
         return self._items.get(name)
